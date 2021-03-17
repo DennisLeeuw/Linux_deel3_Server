@@ -73,8 +73,8 @@
 
 \frontmatter
 \chapter{Over dit Document}
-\input{OverDitDocument}
-\input{DocChanges}
+\input{src/OverDitDocument}
+\input{src/DocChanges}
 
 %%%%%%%%%%%%%%%%%
 %%% De inhoud %%%
@@ -83,9 +83,13 @@
 
 \mainmatter
 \chapter{Inleiding}
-\input{inleiding}
+\input{src/inleiding}
 
 \chapter{Debian installatie}
+%Management netwerk
+
+\chapter{Remote access}
+%alleen vanaf het management netwerk
 
 \chapter{Werken met daemons}
 \section{init en systemd}
@@ -95,18 +99,18 @@
 
 \chapter{LAMP}
 \section{Apache}
-\input{webservers}
-\input{ApacheInstall}
+\input{src/webservers}
+\input{src/ApacheInstall}
 \section{MariaDB}
-\input{MariaDBInstall}
+\input{src/MariaDBInstall}
 \section{PHP}
-\input{PHPInstall}
+\input{src/PHPInstall}
 
 \chapter{NextCloud}
-\input{NextCloudIntro}
+\input{src/NextCloudIntro}
 \section{NextCloud installatie}
-\input{NextCloudInstallatie}
-\input{NextCloudPHP}
+\input{src/NextCloudInstallatie}
+\input{src/NextCloudPHP}
 
 %%%%%%%%%%%%%%%%%%%%%
 %%% Index and End %%%
