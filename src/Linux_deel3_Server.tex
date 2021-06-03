@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 \usepackage{float}
+\usepackage{xurl}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
 \usepackage{tabularx}
@@ -43,7 +44,7 @@
 \pagestyle{headings}
 
 % Turn on indexing
-\makeindex
+\makeindex[intoc]
 
 % Define document
 \author{D. Leeuw}
@@ -84,15 +85,20 @@
 \mainmatter
 \chapter{Inleiding}
 \input{src/inleiding}
+%Management netwerk
 
 \chapter{Debian installatie}
-%Management netwerk
+\input{src/debian_install.tex}
+
+\chapter{Linux in een Windows Domain}
 
 \chapter{Remote access}
 %alleen vanaf het management netwerk
 
 \chapter{Werken met daemons}
 \section{init en systemd}
+\section{syslog}
+\section{journalctl}
 
 \chapter{Mailserver}
 \section{postfix}
@@ -102,11 +108,13 @@
 \input{src/webservers}
 \input{src/ApacheInstall}
 \section{MariaDB}
+% Extra disk voor DB
 \input{src/MariaDBInstall}
 \section{PHP}
 \input{src/PHPInstall}
 
 \chapter{NextCloud}
+% Extra disk voor Data
 \input{src/NextCloudIntro}
 \section{NextCloud installatie}
 \input{src/NextCloudInstallatie}

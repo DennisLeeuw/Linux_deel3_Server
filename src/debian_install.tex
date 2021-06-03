@@ -1,0 +1,49 @@
+Selecteer de Grafische installatie interface in de Debian Installer Menu (\ref{DebInstallMenu}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{debian_install_01.png}
+	\caption{Debian Installer Menu}
+	\label{DebInstallMenu}
+\end{figure}
+
+Selecteer daarna de Engelse taal. Dit is de taal die gebruikt wordt voor de installatie. De taal van het OS kiezen we later.
+
+Bij Location kiezen we eerst other en daarna Europe en dan Netherlands. Voor de Locales laten we staan en\_US.UTF-8. Voor de keyboard houden we American English aan, tenzij je een specifiek toetsenbord hebt.
+
+De volgende keuze die je moet maken is die voor een hostname, kortom hoe gaat je computer heten. Ik heb gekozen voor DNC01, wat staat voor Debian NextCloud eerste machine. De keuze voor het domein waarin de machine zit is lastig omdat we geen domein hebben. Het makkelijkst is om hier voorlopig localdomain in te vullen. We kunnen het later altijd nog wijzigen.
+
+Nu moeten we een root wachtwoord kiezen, omdat we diensten gaan draaien op deze machine is het verstandig om een sterk wachtwoord te kiezen. Ook voor de gebruiker is dat een goed plan. Gebruik een password manager om een wachtwoord te generen of om je gekozen wachtwoorden erin op te slaan.
+
+We houden de harddisk indeling simpel, dus kiezen we Guided als onze optie voor de harddisk indeling zoals aangegeven in \ref{DebDiskPart}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{debian_install_partition.png}
+	\caption{Debian Disk Partitioning}
+	\label{DebDiskPart}
+\end{figure}
+
+We kiezen de enige harddisk die er is en kiezen voor All files in one partition. In het overzicht dat we te zien krijgen zien we dat er naast een bestandssysteem ook een swap-partitie aangemaakt is zoals weergeven in figuur \ref{DebDiskParts}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{debian_install_partitioned.png}
+	\caption{Debian Disk Overview}
+	\label{DebDiskParts}
+\end{figure}
+
+Nadat we hebben gekozen voor Yes bij de vraag of we het zeker weten zal Debian beginnen met de installatie van het systeem. Na de installatie van het base system (een minimaal systeem), krijgen we de vraag of we nog meer software van andere CD's willen installeren. Dat willen we niet. Debian gaat nu opzoek naar updates en additionele software die ge\"installeerd kan worden. De repo's van Debian staan over de wereld verspreid, om geen data op te halen van bijvoorbeeld servers in de Verenigde Staten, maar alleen van servers in Nederland, zodat de belasting van het Internet alleen lokaal is, moeten we een keuze maken vanaf welke servers wij onze software willen ophalen. Kies Netherlands en deb.debian.org. We gebruiken geen proxy dus bij die vraag mag je continue geven.
+
+Debian gaat nu de databases ophalen van alle software die er voor Debian beschikbaar is en gaat daarna meteen je systeem updaten met de laatst beschikbare versies. Afhankelijk van hoe nieuw de ISO was waarvan de hebt geboot kan dit even duren. Je kan af en toe een vraag krijgen van de installer, lees de tekst dan goed en bepaal of je het wel of niet wil wat er gevraagd wordt. Als de update klaar is krijg je de keuze om nog extra software te installeren (zie \ref{DebSoft}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{debian_install_software.png}
+	\caption{Debian Additional Software Choice}
+	\label{DebSoft}
+\end{figure}
+
+We willen geen desktop en ook geen printserver, dus deze twee opties moeten we uit zetten. De standard system utilities willen we wel, dus die laten we aan staan.
+
+Nadat Debian klaar is met de installatie kiezen we ervoor om GRUB te installeren in de master boot record, we selecteren /dev/sda en als alles klaar is rebooten we het systeem.
